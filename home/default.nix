@@ -34,12 +34,20 @@
     tmux
     fastfetch
     lazygit
+    gh
   ];
 
   programs.git = {
     enable = true;
-    settings.user.name = "notanoob";
-    settings.user.email = "cooperye09@gmail.com";
+    settings = {
+      user = {
+        name = "notanoob";
+        email = "cooperye09@gmail.com";
+      };
+      safe.directory = [
+        "/dots"
+      ];
+    };
   };
 
   programs.bash = {

@@ -46,4 +46,11 @@
   users.defaultUserShell = pkgs.zsh;
   environment.shells = [ pkgs.zsh ];
   programs.zsh.enable = true;
+  programs.git = {
+    enable = true;
+    config.user = {
+      name = "notanoob";
+      email = "cooperye09@gmail.com";
+    };
+    };
 }
