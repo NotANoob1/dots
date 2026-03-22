@@ -1,16 +1,7 @@
 { pkgs, ... }:
 
 {
-  services.upower.enable = true;
-
   security.rtkit.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   hardware.bluetooth = {
     enable = true;
@@ -23,13 +14,22 @@
     };
   };
 
-  services.pulseaudio = {
-    package = pkgs.pulseaudioFull;
+  services = {    
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+
+    pulseaudio = {
+      package = pkgs.pulseaudioFull;
+    };
+
+    upower.enable = true;
+    tuned.enable = true;
+    gnome.evolution-data-server.enable = true;
+    systembus-notify.enable = true;
+    flatpak.enable = true;
   };
-
-  services.tuned.enable = true;
-
-  services.gnome.evolution-data-server.enable = true;
-
-  services.systembus-notify.enable = true;
 }

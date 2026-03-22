@@ -8,6 +8,7 @@
     users.notanoob = {
       imports = [
         ../home/default.nix
+        ../home/notanoob/default.nix
       ];
 
       home.username = "notanoob";
@@ -52,5 +53,5 @@
       name = "notanoob";
       email = "cooperye09@gmail.com";
     };
-    };
+  };
 }

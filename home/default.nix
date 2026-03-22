@@ -7,6 +7,7 @@
     ./stylix.nix
     ./nvim.nix
     ./shell.nix
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
 
   home.stateVersion = "25.11";
