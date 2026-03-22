@@ -17,6 +17,8 @@
 
   time.timeZone = "America/Chicago";
 
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     git
     xwayland-satellite
