@@ -28,7 +28,7 @@
     targets.gtk.enable = true;
     targets.kde.enable = true;
 
-    iconTheme = {
+    icons = {
       enable = true;
       package = pkgs.reversal-icon-theme;
       light = "Reversal";

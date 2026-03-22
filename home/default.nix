@@ -37,6 +37,7 @@
     lazygit
     gh
     qimgv
+    cliphist
   ];
 
   programs.git = {
