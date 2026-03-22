@@ -52,10 +52,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/";
+
   };
   outputs =
     {
@@ -75,8 +73,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix 
-          ];
+          ./configuration.nix
+        ];
       };
     };
 }

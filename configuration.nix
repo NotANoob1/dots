@@ -15,12 +15,14 @@
   networking.hostName = "nixos-btw";
   networking.networkmanager.enable = true;
 
-  time.timeZone = "America/Chicago"; 
+  time.timeZone = "America/Chicago";
 
   environment.systemPackages = with pkgs; [
     git
     xwayland-satellite
     libnotify
+    kdePackages.kpeople
+    kdePackages.qqc2-desktop-style
   ];
 
   environment.variables = {
@@ -46,7 +48,7 @@
   ];
 
   system.stateVersion = "25.11";
-  
+
   security.sudo.configFile = ''
     user_name ALL=(ALL) NOPASSWD:/usr/bin/env nvim
   '';

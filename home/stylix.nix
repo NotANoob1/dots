@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -13,9 +18,21 @@
     polarity = "dark";
 
     targets.zen-browser.profileNames = [ "default" ];
+
     targets.starship = {
       colors.enable = false;
       enable = false;
+    };
+
+    targets.qt.enable = true;
+    targets.gtk.enable = true;
+    targets.kde.enable = true;
+
+    iconTheme = {
+      enable = true;
+      package = pkgs.reversal-icon-theme;
+      light = "Reversal";
+      dark = "Reversal";
     };
 
     image = pkgs.fetchurl {

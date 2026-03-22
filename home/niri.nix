@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   config,
   ...
 }:
@@ -13,9 +14,11 @@
 
   programs.noctalia-shell.settings = {
     wallpaper.overviewEnabled = true;
-    calendarSupport = true;
-    location.name = "Plano";
-    useFahrenheit = true;
+    location = {
+      name = "Plano";
+      useFahrenheit = true;
+      use12hourFormat = true;
+    };
   };
 
   programs.niri.settings = {

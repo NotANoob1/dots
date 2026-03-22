@@ -36,6 +36,7 @@
     fastfetch
     lazygit
     gh
+    qimgv
   ];
 
   programs.git = {
@@ -59,4 +60,23 @@
   };
 
   programs.alacritty.enable = true;
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = [ "nemo.desktop" ];
+      "image/png" = [ "qimgv.desktop" ];
+      "image/jpeg" = [ "qimgv.desktop" ];
+    };
+  };
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
+
 }

@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -54,14 +59,15 @@
     let
       value =
         let
-          zen-browser = inputs.zen-browser.packages.x86_64-linux.beta;
+          zen-browser = inputs.zen-browser.packages.x86_64-linux.default;
         in
         zen-browser.meta.desktopFileName;
 
       associations = builtins.listToAttrs (
         map
-          (name: {
-            inherit name value;
+          (mime: {
+            name = mime;
+            value = lib.mkDefault value;
           })
           [
             "application/x-extension-shtml"
