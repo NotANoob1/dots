@@ -66,6 +66,7 @@
       helium,
       stylix,
       nvf,
+      nix-flatpak,
       ...
     }@inputs:
     {
@@ -73,7 +74,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/thinkpad.nix
         ];
       };
     };

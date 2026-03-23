@@ -1,6 +1,11 @@
 { ... }:
 
 {
+  imports = [
+    ./nvim.nix
+    ./yazi.nix
+  ];
+
   programs.zsh = {
     enable = true;
     shellAliases = {
@@ -20,5 +25,25 @@
     enable = true;
     presets = [ "catppuccin-powerline" ];
     settings.cmd_duration.show_notifications = false;
+  };
+
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "notanoob";
+        email = "cooperye09@gmail.com";
+      };
+      safe.directory = [
+        "/dots"
+      ];
+    };
+  };
+
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      rebuild = "sudo nixos-rebuild switch --flake /dots/#nixos-btw";
+    };
   };
 }

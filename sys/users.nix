@@ -7,7 +7,8 @@
 
     users.notanoob = {
       imports = [
-        ../home/default.nix
+        ../home/standard.nix
+        ../home/browsers/default/zen.nix
         ../home/notanoob/default.nix
       ];
 
@@ -17,7 +18,8 @@
 
     users.notanoob-school = {
       imports = [
-        ../home/default.nix
+        ../home/standard.nix
+        ../home/browsers/default/helium.nix
       ];
 
       home.username = "notanoob-school";

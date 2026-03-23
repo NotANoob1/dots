@@ -3,10 +3,10 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ./hardware-configuration.nix
-    ./host/login.nix
-    ./host/services.nix
-    ./host/users.nix
+    ./hardware/thinkpad-hardware.nix
+    ../sys/login.nix
+    ../sys/services.nix
+    ../sys/users.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

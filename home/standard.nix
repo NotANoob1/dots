@@ -2,12 +2,15 @@
 
 {
   imports = [
-    ./niri.nix
-    ./zen.nix
-    ./stylix.nix
-    ./nvim.nix
-    ./shell.nix
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+
+    ./shell/shell.nix
+
+    ./de/stylix.nix
+    ./de/niri.nix
+
+    ./browsers/zen.nix
+    ./browsers/helium.nix
   ];
 
   home.stateVersion = "25.11";
@@ -18,7 +21,6 @@
 
   home.packages = with pkgs; [
     wl-clipboard
-    inputs.helium.defaultPackage.x86_64-linux
     tree
     ripgrep
     nemo
@@ -28,7 +30,6 @@
     eza
     zip
     unzip
-    yazi
     fd
     jq
     bat
@@ -39,26 +40,6 @@
     qimgv
     cliphist
   ];
-
-  programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        name = "notanoob";
-        email = "cooperye09@gmail.com";
-      };
-      safe.directory = [
-        "/dots"
-      ];
-    };
-  };
-
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake /dots/#nixos-btw";
-    };
-  };
 
   programs.alacritty.enable = true;
 
@@ -71,15 +52,6 @@
     };
   };
 
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-    };
-  };
-  
   programs.obsidian = {
     enable = true;
     package = pkgs.obsidian;
