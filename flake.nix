@@ -53,7 +53,11 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/";
-
+    
+    niri-git = {
+      url = "github:niri-wm/niri/pull/3483/head";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -67,6 +71,7 @@
       stylix,
       nvf,
       nix-flatpak,
+      niri-git,
       ...
     }@inputs:
     {

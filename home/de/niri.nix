@@ -93,6 +93,10 @@
       "Mod+O".action = toggle-overview;
 
       "Mod+T".action.spawn = [ "alacritty" ];
+      "Mod+B".action.spawn = [
+        "xdg-open"
+        "https://"
+      ];
       "Mod+D".action = close-window;
     };
 

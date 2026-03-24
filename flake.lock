@@ -338,6 +338,28 @@
         "type": "github"
       }
     },
+    "niri-git": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1774190104,
+        "narHash": "sha256-L/Ldq9G41Mj8WjWTuC+rePvWIx1A/tHdFpLbQmtrMSA=",
+        "owner": "niri-wm",
+        "repo": "niri",
+        "rev": "d06dd4b9e60fa07120c217aa095f3ed8caac99f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "niri-wm",
+        "ref": "pull/3483/head",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "niri-stable": {
       "flake": false,
       "locked": {
@@ -517,6 +539,7 @@
         "helium": "helium",
         "home-manager": "home-manager",
         "niri": "niri",
+        "niri-git": "niri-git",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
@@ -524,6 +547,27 @@
         "nvf": "nvf",
         "stylix": "stylix",
         "zen-browser": "zen-browser"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "niri-git",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757989933,
+        "narHash": "sha256-9cpKYWWPCFhgwQTww8S94rTXgg8Q8ydFv9fXM6I8xQM=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "8249aa3442fb9b45e615a35f39eca2fe5510d7c3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "stylix": {
