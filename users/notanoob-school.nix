@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 
 {
-  homemanager.users.notanoob-school = {
+  home-manager.users.notanoob-school = {
     imports = [
       ../home/standard.nix
       ../home/browsers/default/helium.nix

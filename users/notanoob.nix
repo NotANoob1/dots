@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 
 {
-  homemanager.users.notanoob = {
+  home-manager.users.notanoob = {
     imports = [
       ../home/standard.nix
       ../home/browsers/default/zen.nix

@@ -26,22 +26,19 @@ in
   environment.systemPackages = [
     pkgs.qt6.qt5compat
     noctalia-sddm
-    pkgs.libsForQt5.breeze-icons
-    pkgs.kdePackages.breeze-gtk
-    pkgs.adwaita-icon-theme
   ];
 
   services.displayManager = {
     sddm = {
       enable = true;
-      wayland.enable = true;
+      wayland = {
+        enable = true;
+        compositor = "kwin";
+      };
       theme = "noctalia-sddm";
       extraPackages = [
         pkgs.qt6.qt5compat
         noctalia-sddm
-        pkgs.libsForQt5.breeze-icons
-        pkgs.kdePackages.breeze-gtk
-        pkgs.adwaita-icon-theme
       ];
     };
   };
