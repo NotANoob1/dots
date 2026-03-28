@@ -9,6 +9,8 @@
     ../users/notanoob-school.nix
   ];
 
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -25,5 +27,5 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
- 
+
 }

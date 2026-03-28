@@ -11,6 +11,8 @@
 
     ./browsers/zen.nix
     ./browsers/helium.nix
+
+    ./apps/alacritty.nix
   ];
 
   home.stateVersion = "25.11";
@@ -39,9 +41,8 @@
     gh
     qimgv
     cliphist
+    imagemagick
   ];
-
-  programs.alacritty.enable = true;
 
   xdg.mimeApps = {
     enable = true;

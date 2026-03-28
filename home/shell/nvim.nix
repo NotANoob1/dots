@@ -33,6 +33,8 @@
         json.enable = true;
         python.enable = true;
         clang.enable = true;
+        ts.enable = true;
+        qml.enable = true;
       };
 
       options = {
